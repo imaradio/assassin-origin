@@ -35,12 +35,131 @@
 			}
 		}
 	],
+	
+	"discard_waypoint": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "title @s actionbar {\"text\": \"Your waypoint has been discarded.\", \"color\": \"red\", \"bold\": true"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "kill @e[tag=AssassinWaypoint]"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_resource",
+					"change": 0,
+					"operation": "set"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "forceload remove all"
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:ender_pearl"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:*_resource",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		},
+		"key": {
+			"key": "key.loadToolbarActivator"
+		},
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 23
+		},
+		"cooldown": 100
+	},
 
 	"goto_waypoint": {
 		"type": "origins:active_self",
 		"entity_action": {
-			"type": "origins:execute_command",
-			"command": "function assassin:waypoint/goto_waypoint"
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:spawn_particles",
+					"particle": { "type": "minecraft:witch" },
+					"count": 500,
+					"speed": 0.01,
+					"force": true,
+					"spread": {
+						"x": 1,
+						"y": 1,
+						"z": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[distance=0..5,type=!minecraft:item_frame,type=!minecraft:glow_item_frame] at @e[tag=AssassinWaypoint] run tp ~ ~ ~"
+				},
+				{
+					"type": "origins:spawn_particles",
+					"particle": { "type": "minecraft:witch" },
+					"count": 500,
+					"speed": 0.01,
+					"force": true,
+					"spread": {
+						"x": 1,
+						"y": 1,
+						"z": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "title @s actionbar {\"text\": \"Your waypoint has been lost.\", \"color\": \"green\", \"bold\": true}"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_resource",
+					"change": 0,
+					"operation": "set"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "kill @e[tag=AssassinWaypoint]"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "offhand",
+					"action": {
+						"type": "origins:consume",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "forceload remove all"
+				}
+			]
 		},
 		"condition": {
 			"type": "origins:and",
@@ -73,43 +192,6 @@
 		"cooldown": 600
 	},
 
-	"lose_waypoint": {
-		"type": "origins:active_self",
-		"entity_action": {
-			"type": "origins:execute_command",
-			"command": "function assassin:waypoint/lose_waypoint"
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:equipped_item",
-					"equipment_slot": "offhand",
-					"item_condition": {
-						"type": "origins:ingredient",
-						"ingredient": {
-							"item": "minecraft:ender_pearl"
-						}
-					}
-				},
-				{
-					"type": "origins:resource",
-					"resource": "*:*_resource",
-					"comparison": "==",
-					"compare_to": 1
-				}
-			]
-		},
-		"key": {
-			"key": "key.loadToolbarActivator"
-		},
-		"hud_render": {
-			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
-			"bar_index": 23
-		},
-		"cooldown": 240
-	},
-
 	"resource": {
 		"type": "origins:resource",
 		"min": 0,
@@ -123,8 +205,55 @@
 	"set_waypoint": {
 		"type": "origins:active_self",
 		"entity_action": {
-			"type": "origins:execute_command",
-			"command": "function assassin:waypoint/set_waypoint"
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "kill @e[tag=AssassinWaypoint]"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:armor_stand ~ ~ ~ {NoGravity:1, Invulnerable:1, Invisible:1, Tags:[\"AssassinWaypoint\"]}"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "title @s actionbar {\"text\": \"Waypoint Set\", \"color\": \"yellow\", \"bold\": true}"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~ 10"
+				},
+				{
+					"type": "origins:spawn_particles",
+					"particle": { "type": "minecraft:witch" },
+					"count": 500,
+					"speed": 0.01,
+					"force": true,
+					"spread": {
+						"x": 1,
+						"y": 1,
+						"z": 1
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_resource",
+					"change": 1,
+					"operation": "set"
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "forceload add ~ ~"
+				}
+			]
 		},
 		"condition": {
 			"type": "origins:and",
