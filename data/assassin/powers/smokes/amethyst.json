@@ -1,49 +1,188 @@
 {
 	"type": "origins:active_self",
 	"entity_action": {
-		"type": "origins:choice",
+		"type": "origins:and",
 		"actions": [
 			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/2"
-				},
-				"weight": 20
+				"type": "origins:spawn_particles",
+				"particle": { "type": "minecraft:composter" },
+				"count": 300,
+				"speed": 0.01,
+				"force": true,
+				"spread": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
 			},
 			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/3"
-				},
-				"weight": 15
+				"type": "origins:equipped_item_action",
+				"equipment_slot": "offhand",
+				"action": {
+					"type": "origins:consume",
+					"amount": 1
+				}
 			},
 			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/4"
-				},
-				"weight": 8
-			},
-			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/5"
-				},
-				"weight": 4
-			},
-			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/6"
-				},
-				"weight": 2
-			},
-			{
-				"element": {
-					"type": "origins:execute_command",
-					"command": "function assassin:xp/7"
-				},
-				"weight": 1
+				"type": "origins:choice",
+				"actions": [
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~3 ~ ~-1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-3 ~ ~2 {Value:1}"
+								}
+							]
+						},
+						"weight": 20
+					},
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~ {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~3 ~ ~-2 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~ ~ ~-2 {Value:1}"
+								}
+							]
+						},
+						"weight": 15
+					},
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-2 ~ ~-3 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~3 ~ ~-1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~2 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-1 ~ ~3 {Value:1}"
+								}
+							]
+						},
+						"weight": 8
+					},
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~ {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-3 ~ ~1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~2 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-2 ~ ~-3 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~-1 {Value:1}"
+								}
+							]
+						},
+						"weight": 4
+					},
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~3 ~ ~-3 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~ ~1 ~ {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-2 ~ ~3 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~2 ~ ~-1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~4 ~ ~ {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-2 ~ ~1 {Value:1}"
+								}
+							]
+						},
+						"weight": 2
+					},
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~ ~1 ~ {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~2 ~ ~1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~ ~ ~1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-3 ~ ~3 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-4 ~1 ~2 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~1 ~ ~-1 {Value:1}"
+								},
+								{
+									"type": "origins:execute_command",
+									"command": "summon minecraft:experience_orb ~-3 ~1 ~-4 {Value:1}"
+								}
+							]
+						},
+						"weight": 1
+					}
+				]
 			}
 		]
 	},
