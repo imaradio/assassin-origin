@@ -12,8 +12,16 @@
 						"type": "origins:and",
 						"actions": [
 							{
-								"type": "origins:execute_command",
-								"command": "particle minecraft:falling_water ~ ~ ~ 1 1 1 0.01 1000 force"
+								"type": "origins:spawn_particles",
+								"particle": { "type": "minecraft:falling_water" },
+								"count": 3000,
+								"speed": 0.01,
+								"force": true,
+								"spread": {
+									"x": 1,
+									"y": 1,
+									"z": 1
+								}
 							},
 							{
 								"type": "origins:extinguish"
@@ -26,8 +34,21 @@
 				"type": "origins:and",
 				"actions": [
 					{
-						"type": "origins:execute_command",
-						"command": "function assassin:moist"
+						"type": "origins:spawn_particles",
+						"particle": { "type": "minecraft:falling_water" },
+						"count": 3000,
+						"speed": 0.01,
+						"force": true,
+						"spread": {
+							"x": 1,
+							"y": 1,
+							"z": 1
+						}
+					},
+					{
+						"type": "origins:replace_inventory",
+						"slot": "weapon.offhand",
+						"stack": { "item": "minecraft:bucket" }
 					},
 					{
 						"type": "origins:extinguish"
