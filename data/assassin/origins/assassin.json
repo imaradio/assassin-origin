@@ -11,12 +11,10 @@
 		"assassin:smokes/blaze",
 		"assassin:smokes/chorus",
 		"assassin:sneak",
-		"assassin:no_shield",
 		"assassin:backstab",
-		"assassin:climb_toggle",
-		"assassin:fall_immunity",
 		"assassin:effects",
-		"assassin:iron_max"
+		"assassin:climb_toggle",
+		"assassin:no_shield"
 	],
 	"icon": "minecraft:iron_sword",
 	"order": 69,
