@@ -21,7 +21,7 @@ A comprehensive list is as follows:
 	- Discard: when held in the offhand, Save Toolbar will Discard the waypoint.
 - Shell (Scute) will give the Assassin and those around them great defensive capabilities, at the cost of very little movement.
 - Glow (Glowstone Dust) will light up those around the Assassin, making them much more noticeable targets.
-- Blaze (Blaze Powder) will set on fire the area around the Assassin, along with those in the way.
+- Blaze (Blaze Powder) will set those near the Assassin on fire.
 - Chorus (Chorus Fruit) will amplify the effects of the Chorus Fruit, spreading the Assassin and those nearby a random distance from where they used to stand.
 
 ### Sneaky Capabilities
@@ -34,5 +34,4 @@ Due to sneaking around so often, the Assassin also learnt to be quick about it.
 - Smoke Bombs act as your defense, so you have no need for shields.
 - The Assassin deals more damage when attacking from behind. (authored by eggohito, see `/LICENSE.md` for details)
 - Being sneaky has led to the Assassin becoming the Master Rock Climber, since they often need to hang from walls.
-- Climbing carefully down from walls isn't usually an option, so the Assassin has learnt to take a fall
-- The Assassin _must_ move quickly.
+- The Assassin has quite free movement, finding it much easier to travel than others, _unless_ wearing better than iron, which feels constricting.
