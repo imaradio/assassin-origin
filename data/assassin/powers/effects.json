@@ -1,5 +1,7 @@
 {
 	"type": "origins:multiple",
+	"name": "Freed Movement",
+	"description": "You find it much easier to travel around than others, but anything better than iron armour is constricts your movement somewhat.",
 
 	"attributes": {
 		"type": "origins:conditioned_attribute",
@@ -109,6 +111,5 @@
 			],
 			"inverted": true
 		}
-	},
-	"hidden": true
+	}
 }
