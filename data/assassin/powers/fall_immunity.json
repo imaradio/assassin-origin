@@ -1,9 +1,0 @@
-{
-	"type": "origins:invulnerability",
-	"damage_condition": {
-		"type": "origins:name",
-		"name": "fall"
-	},
-	"name": "Flexible",
-	"description": "Your flexible nature allows you to absorb falls effortlessly. You find it much easier to travel around than others."
-}
