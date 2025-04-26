@@ -110,8 +110,8 @@
 					}
 				},
 				{
-					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~"
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.allay.ambient_without_item"
 				},
 				{
 					"type": "origins:execute_command",
@@ -130,8 +130,8 @@
 					}
 				},
 				{
-					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~"
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.allay.ambient_without_item"
 				},
 				{
 					"type": "origins:execute_command",
@@ -226,8 +226,8 @@
 					"command": "title @s actionbar {\"text\": \"Waypoint Set\", \"color\": \"yellow\", \"bold\": true}"
 				},
 				{
-					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.allay.ambient_without_item player @a[distance=0..5] ~ ~ ~ 10"
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.allay.ambient_without_item"
 				},
 				{
 					"type": "origins:spawn_particles",
