@@ -59,6 +59,10 @@
 				{
 					"type": "origins:execute_command",
 					"command": "scoreboard objectives add pitch dummy"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard objectives add dimension dummy"
 				}
 			]
 		}
@@ -248,6 +252,18 @@
 				{
 					"type": "origins:execute_command",
 					"command": "execute as @s store result score @s pitch run data get entity @s Rotation[1]"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute if dimension minecraft:overworld run scoreboard players set @s dimension 0"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute if dimension minecraft:the_nether run scoreboard players set @s dimension 1"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute if dimension minecraft:the_end run scoreboard players set @s dimension 2"
 				},
 				{
 					"type": "origins:execute_command",
