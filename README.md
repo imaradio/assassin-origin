@@ -1,5 +1,4 @@
 # The Assassin Origin
-![Discord](https://img.shields.io/discord/1367183170851831879?style=for-the-badge&logo=discord&logoColor=%23ffffff&label=Join%20the%20Discord!&labelColor=%235865f2&color=%2336373e)
 
 The Assassin origin is created for the [Origins Minecraft Mod](https://modrinth.com/mod/origins), which is a required dependency. It currently has support for version 1.10.0 of the Origins Mod (which is the version available on **Minecraft 1.20** and **1.20.1**) though it may work on others.
 [Pehkui](https://modrinth.com/mod/pehkui) is an optional (though recommended) dependency, it gives some extra functionality to the Assassin's Sneaky Capabilities.
