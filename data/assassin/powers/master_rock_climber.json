@@ -4,14 +4,12 @@
 	"toggle": {
 		"type": "origins:toggle",
 		"key": {
-			"key": "key.origins.secondary_active",
-			"continuous": false
+			"key": "key.origins.secondary_active"
 		}
 	},
-
 	"climbing": {
 		"type": "origins:climbing",
-		"hold_condition": {
+    "hold_condition": {
 			"type": "origins:and",
 			"conditions": [
 				{
@@ -19,15 +17,13 @@
 					"conditions": [
 						{
 							"type": "origins:block_collision",
-							"offset_x": 0.01,
-							"offset_z": 0.01,
-							"offset_y": 0
+							"offset_x": 0.001,
+							"offset_z": 0.001
 						},
 						{
 							"type": "origins:block_collision",
-							"offset_x": -0.01,
-							"offset_z": -0.01,
-							"offset_y": 0
+							"offset_x": -0.001,
+							"offset_z": -0.001
 						}
 					]
 				},
@@ -41,7 +37,19 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:collided_horizontally"
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:block_collision",
+							"offset_x": 0.001,
+							"offset_z": 0.001
+						},
+						{
+							"type": "origins:block_collision",
+							"offset_x": -0.001,
+							"offset_z": -0.001
+						}
+					]
 				},
 				{
 					"type": "origins:power_active",
